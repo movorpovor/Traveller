@@ -8,7 +8,11 @@ class ListOfPoints extends Component{
     componentWillUpdate(nextProps, nextState){
         const place_id = nextProps.selectedPoint.place_id;
         if (place_id)
-            document.getElementById('ListOfPoints_' + place_id).scrollIntoView();
+        {
+            var element = document.getElementById('ListOfPoints_' + place_id);
+            if (element)
+                element.scrollIntoView();
+        }
     }
 
     render(){
